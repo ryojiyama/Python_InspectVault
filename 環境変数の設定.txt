@@ -1,0 +1,4 @@
+環境 ： 変数名  :  パス
+QC07:MyOneDrivePath:C:\Users\QC07\OneDrive - トーヨーセフティホールディングス株式会社\品質管理部_試験グラフ作成
+
+C:\Users\tajika\OneDrive - トーヨーセフティホールディングス株式会社\品質管理部_試験グラフ作成\Scripts
