@@ -1,0 +1,2 @@
+# Python_InspectVault
+品質管理部で使用するPythonコード
