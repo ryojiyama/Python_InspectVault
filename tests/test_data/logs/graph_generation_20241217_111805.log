@@ -1,0 +1,32 @@
+2024-12-17 11:18:05,583 - GraphGeneration - INFO - Base path: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data
+2024-12-17 11:18:05,584 - GraphGeneration - INFO - ディレクトリが存在します: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data\CSV
+2024-12-17 11:18:05,585 - GraphGeneration - INFO - ディレクトリが存在します: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data\CSV_LOG
+2024-12-17 11:18:05,587 - GraphGeneration - INFO - ディレクトリが存在します: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data\templates
+2024-12-17 11:18:05,589 - GraphGeneration - INFO - ディレクトリが存在します: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data\logs
+2024-12-17 11:18:05,589 - GraphGeneration - INFO - グラフ生成プロセスを開始します
+2024-12-17 11:18:05,589 - GraphGeneration - INFO - CSVインポートを開始
+2024-12-17 11:18:06,570 - GraphGeneration - INFO - CSVピボット処理を開始
+2024-12-17 11:18:06,671 - GraphGeneration - INFO - XLSXコンバート処理を開始
+2024-12-17 11:18:07,132 - GraphGeneration - ERROR - 予期せぬエラーが発生しました: single positional indexer is out-of-bounds
+Traceback (most recent call last):
+  File "C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\main.py", line 66, in run_process
+    csv_to_xlsx_main()
+  File "C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\src\csvtoxlsxconverter.py", line 133, in main
+    filtered_data = filter_data(df)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\src\csvtoxlsxconverter.py", line 33, in filter_data
+    return data_frame[data_frame.iloc[:, 1].str.contains('|'.join(keywords), na=False)]
+                      ~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\QC07\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\core\indexing.py", line 1184, in __getitem__
+    return self._getitem_tuple(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QC07\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\core\indexing.py", line 1690, in _getitem_tuple
+    tup = self._validate_tuple_indexer(tup)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QC07\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\core\indexing.py", line 966, in _validate_tuple_indexer
+    self._validate_key(k, i)
+  File "C:\Users\QC07\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\core\indexing.py", line 1592, in _validate_key
+    self._validate_integer(key, axis)
+  File "C:\Users\QC07\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\core\indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds

@@ -1,0 +1,17 @@
+2024-12-17 11:30:20,078 - GraphGeneration - INFO - Base path: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data
+2024-12-17 11:30:20,079 - GraphGeneration - INFO - ディレクトリが存在します: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data\CSV
+2024-12-17 11:30:20,079 - GraphGeneration - INFO - ディレクトリが存在します: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data\CSV_LOG
+2024-12-17 11:30:20,079 - GraphGeneration - INFO - ディレクトリが存在します: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data\templates
+2024-12-17 11:30:20,080 - GraphGeneration - INFO - ディレクトリが存在します: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data\logs
+2024-12-17 11:30:20,080 - GraphGeneration - INFO - グラフ生成プロセスを開始します
+2024-12-17 11:30:20,080 - GraphGeneration - INFO - CSVインポートを開始
+2024-12-17 11:30:21,031 - GraphGeneration - INFO - CSVピボット処理を開始
+2024-12-17 11:30:21,119 - GraphGeneration - INFO - XLSXコンバート処理を開始
+2024-12-17 11:30:21,500 - GraphGeneration - ERROR - 予期せぬエラーが発生しました: name 'parent_directory' is not defined
+Traceback (most recent call last):
+  File "C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\main.py", line 66, in run_process
+    csv_to_xlsx_main()
+  File "C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\src\csvtoxlsxconverter.py", line 158, in main
+    template_path = validate_template(parent_directory, template_file)
+                                      ^^^^^^^^^^^^^^^^
+NameError: name 'parent_directory' is not defined. Did you mean: 'base_directory'?

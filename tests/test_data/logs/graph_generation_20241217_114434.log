@@ -1,0 +1,16 @@
+2024-12-17 11:44:34,349 - GraphGeneration - INFO - Base path: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data
+2024-12-17 11:44:34,350 - GraphGeneration - INFO - ディレクトリが存在します: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data\CSV
+2024-12-17 11:44:34,350 - GraphGeneration - INFO - ディレクトリが存在します: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data\CSV_LOG
+2024-12-17 11:44:34,350 - GraphGeneration - INFO - ディレクトリが存在します: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data\templates
+2024-12-17 11:44:34,351 - GraphGeneration - INFO - ディレクトリが存在します: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data\logs
+2024-12-17 11:44:34,351 - GraphGeneration - INFO - グラフ生成プロセスを開始します
+2024-12-17 11:44:34,351 - GraphGeneration - INFO - CSVインポートを開始
+2024-12-17 11:44:35,293 - GraphGeneration - INFO - CSVピボット処理を開始
+2024-12-17 11:44:35,298 - GraphGeneration - ERROR - 予期せぬエラーが発生しました: 'CSVPivot' object has no attribute 'process_files'
+Traceback (most recent call last):
+  File "C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\main.py", line 61, in run_process
+    csv_pivot_main()
+  File "C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\src\csvpivot.py", line 97, in main
+    return pivot.process_files()
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CSVPivot' object has no attribute 'process_files'

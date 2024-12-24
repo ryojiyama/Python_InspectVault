@@ -1,0 +1,15 @@
+2024-12-18 09:09:43,483 - GraphGeneration - INFO - Base path: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data
+2024-12-18 09:09:43,483 - GraphGeneration - INFO - ディレクトリが存在します: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data\CSV
+2024-12-18 09:09:43,483 - GraphGeneration - INFO - ディレクトリが存在します: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data\CSV_LOG
+2024-12-18 09:09:43,483 - GraphGeneration - INFO - ディレクトリが存在します: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data\templates
+2024-12-18 09:09:43,484 - GraphGeneration - INFO - ディレクトリが存在します: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data\logs
+2024-12-18 09:09:43,484 - GraphGeneration - INFO - グラフ生成プロセスを開始します
+2024-12-18 09:09:43,484 - GraphGeneration - INFO - CSVインポートを開始
+2024-12-18 09:09:43,490 - GraphGeneration - ERROR - 予期せぬエラーが発生しました: unindent does not match any outer indentation level (csvimport.py, line 31)
+Traceback (most recent call last):
+  File "C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\main.py", line 52, in run_process
+    from src.csvimport import main as csv_import_main
+  File "C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\src\csvimport.py", line 31
+    def generate_filename(self, base_path, base_filename):
+                                                          ^
+IndentationError: unindent does not match any outer indentation level

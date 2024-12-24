@@ -1,0 +1,10 @@
+2024-12-18 09:18:06,663 - GraphGeneration - INFO - Base path: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data
+2024-12-18 09:18:06,663 - GraphGeneration - INFO - ディレクトリが存在します: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data\CSV
+2024-12-18 09:18:06,664 - GraphGeneration - INFO - ディレクトリが存在します: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data\CSV_LOG
+2024-12-18 09:18:06,664 - GraphGeneration - INFO - ディレクトリが存在します: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data\templates
+2024-12-18 09:18:06,665 - GraphGeneration - INFO - ディレクトリが存在します: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data\logs
+2024-12-18 09:18:06,665 - GraphGeneration - INFO - グラフ生成プロセスを開始します
+2024-12-18 09:18:06,665 - GraphGeneration - INFO - CSVインポートを開始
+2024-12-18 09:18:07,738 - GraphGeneration - INFO - CSVピボット処理を開始
+2024-12-18 09:18:07,773 - GraphGeneration - INFO - XLSXコンバート処理を開始
+2024-12-18 09:18:07,988 - GraphGeneration - INFO - 全てのプロセスが正常に完了しました

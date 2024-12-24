@@ -1,0 +1,15 @@
+2024-12-17 10:32:47,395 - GraphGeneration - INFO - Base path: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data
+2024-12-17 10:32:47,396 - GraphGeneration - INFO - ディレクトリが存在します: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data\CSV
+2024-12-17 10:32:47,396 - GraphGeneration - INFO - ディレクトリが存在します: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data\CSV_LOG
+2024-12-17 10:32:47,396 - GraphGeneration - INFO - ディレクトリが存在します: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data\templates
+2024-12-17 10:32:47,396 - GraphGeneration - INFO - ディレクトリが存在します: C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\tests\test_data\logs
+2024-12-17 10:32:47,397 - GraphGeneration - INFO - グラフ生成プロセスを開始します
+2024-12-17 10:32:47,397 - GraphGeneration - INFO - CSVインポートを開始
+2024-12-17 10:32:47,403 - GraphGeneration - ERROR - 予期せぬエラーが発生しました: name '__init__' is not defined
+Traceback (most recent call last):
+  File "C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\main.py", line 52, in run_process
+    from src.csvimport import main as csv_import_main
+  File "C:\Dropbox\Development\Python\Python_InspectVault\Python_InspectVault\src\__init__.py", line 1, in <module>
+    __init__.py
+    ^^^^^^^^
+NameError: name '__init__' is not defined

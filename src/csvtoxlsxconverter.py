@@ -13,26 +13,42 @@ CATEGORY_MAPPING = [
 
 def load_csv_files(directory):
     """指定ディレクトリから条件に合致するCSVファイルを読み込む"""
-    csv_files = [os.path.join(directory, f) for f in os.listdir(directory)
-                 if 'Output_' in f and f.lower().endswith('.csv')]  # 'Output_'で始まるファイルを検索
-    if not csv_files:
-        print("CSVファイルが見つかりません。")
-        return pd.DataFrame()  # 空のDataFrameを返す
+    # OUTPUTディレクトリからファイルを検索
+    output_dir = os.path.join(directory, 'OUTPUT')
+    if not os.path.exists(output_dir):
+        print(f"OUTPUTディレクトリが存在しません: {output_dir}")
+        return pd.DataFrame()
 
-    print(f"処理対象ファイル: {csv_files}")  # デバッグ用出力
+    csv_files = []
+    try:
+        # ディレクトリ内のファイルを列挙
+        for f in os.listdir(output_dir):
+            if 'Output_' in f and f.lower().endswith('.csv'):
+                full_path = os.path.join(output_dir, f)
+                if os.path.isfile(full_path):  # ファイルが実際に存在することを確認
+                    csv_files.append(full_path)
+    except Exception as e:
+        print(f"ディレクトリの読み込みでエラー: {e}")
+        return pd.DataFrame()
+
+    if not csv_files:
+        print("処理対象のCSVファイルが見つかりません")
+        return pd.DataFrame(), []
+
+    print(f"処理対象ファイル: {[os.path.basename(f) for f in csv_files]}")
 
     dfs = []
     for file in csv_files:
         try:
             data = pd.read_csv(file)
-            print(f"{file} 読み込み成功")
+            print(f"{os.path.basename(file)} 読み込み成功")
             dfs.append(data)
         except Exception as e:
-            print(f"{file} 読み込み失敗: {e}")
+            print(f"{os.path.basename(file)} 読み込み失敗: {e}")
 
     if dfs:
-        return pd.concat(dfs, ignore_index=True)
-    return pd.DataFrame()
+        return pd.concat(dfs, ignore_index=True), csv_files
+    return pd.DataFrame(), []
 
 def filter_data(data_frame):
     """2列目に特定のキーワードが含まれるレコードをフィルタリングする"""
@@ -113,7 +129,7 @@ def save_workbook(workbook, directory, sheet_names_used):
     if 'test_data' in directory:  # テスト環境の場合
         excel_dir = os.path.join(directory, 'EXCEL')
     else:  # 本番環境の場合
-        excel_dir = os.path.join(os.path.dirname(directory), '☆EXCEL')
+        excel_dir = os.path.join(directory, '☆Excel')
 
     os.makedirs(excel_dir, exist_ok=True)
 
@@ -141,6 +157,15 @@ def save_workbook(workbook, directory, sheet_names_used):
     print(f"Excelファイルを保存しました: {new_path}")
     return new_path
 
+def cleanup_output_files(files):
+    """処理済みファイルを削除する。"""
+    for file in files:
+        try:
+            os.remove(file)
+            print(f"処理済みファイルを削除: {os.path.basename(file)}")
+        except Exception as e:
+            print(f"ファイル削除でエラー: {os.path.basename(file)} - {e}")
+
 def main():
     # 環境変数から基本パスを取得
     base_directory = os.environ.get('OneDriveGraph')
@@ -149,7 +174,7 @@ def main():
         return False
 
     # データの処理
-    df = load_csv_files(base_directory)
+    df, processed_files = load_csv_files(base_directory)
     if df.empty:
         print("処理対象のデータがありません")
         return False
@@ -182,6 +207,7 @@ def main():
 
     # ワークブックを保存
     save_workbook(workbook, base_directory, sheet_names_used)
+    cleanup_output_files(processed_files)
 
     # 警告表示（データが1件も無い場合）
     if show_warning:
